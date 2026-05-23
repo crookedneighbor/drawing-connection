@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://caxj538a64bmh"]
+
+[ext_resource type="Script" uid="uid://c7srubb2nn8tk" path="res://tools/melody-player/melody_player.gd" id="1_kq3vj"]
+
+[sub_resource type="AudioStreamGenerator" id="AudioStreamGenerator_mj65c"]
+
+[node name="MelodyPlayer" type="AudioStreamPlayer2D" unique_id=2018121744]
+stream = SubResource("AudioStreamGenerator_mj65c")
+script = ExtResource("1_kq3vj")
