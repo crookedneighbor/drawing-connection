@@ -1,14 +1,26 @@
 [gd_scene format=3 uid="uid://b0olc2xuik3ss"]
 
 [ext_resource type="PackedScene" uid="uid://d32l4wnp5onnv" path="res://tools/pad/pad.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://vc4ejtiqnw26" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://caxj538a64bmh" path="res://tools/melody-player/melody-player.tscn" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://iihl1e0keb0" path="res://tools/pencil/pencil.tscn" id="2_h2yge"]
 
 [node name="Main" type="Node2D" unique_id=1251148645]
+script = ExtResource("1_1bvp3")
+
+[node name="MelodyPlayer" parent="." unique_id=2018121744 instance=ExtResource("1_h2yge")]
 
 [node name="Pad" parent="." unique_id=1424504259 instance=ExtResource("1_0xm2m")]
 position = Vector2(234, 189)
 
 [node name="Pencil" parent="." unique_id=617229547 instance=ExtResource("2_h2yge")]
+
+[node name="Button" type="Button" parent="." unique_id=836883187]
+offset_left = 520.0
+offset_top = 70.0
+offset_right = 564.0
+offset_bottom = 107.0
+text = "Play C"
 
 [connection signal="enter_drawable_area" from="Pad" to="Pencil" method="enter_drawable_area"]
 [connection signal="exit_drawable_area" from="Pad" to="Pencil" method="exit_drawable_area"]
