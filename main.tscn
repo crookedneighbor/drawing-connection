@@ -9,3 +9,6 @@
 position = Vector2(234, 189)
 
 [node name="Pencil" parent="." unique_id=617229547 instance=ExtResource("2_h2yge")]
+
+[connection signal="enter_drawable_area" from="Pad" to="Pencil" method="enter_drawable_area"]
+[connection signal="exit_drawable_area" from="Pad" to="Pencil" method="exit_drawable_area"]

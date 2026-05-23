@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://d32l4wnp5onnv"]
 
+[ext_resource type="Script" uid="uid://cllfdvbmxu5ku" path="res://tools/pad/pad.gd" id="1_82yi4"]
 [ext_resource type="Texture2D" uid="uid://bxj7p272qes4a" path="res://tools/pad/pad.png" id="1_xfyqx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfyqx"]
 size = Vector2(445, 273)
 
 [node name="Pad" type="Node2D" unique_id=1424504259]
+script = ExtResource("1_82yi4")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1379514159]
 texture = ExtResource("1_xfyqx")
