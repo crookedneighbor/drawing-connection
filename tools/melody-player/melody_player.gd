@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 		current_key = get_random_note()
 		count = 0
 		sustain_amount = get_random_sustain()
-	fill_buffer(notes[current_key])
+	play_note(current_key)
 
 func get_random_note() -> String:
 	return notes.keys().pick_random()
@@ -35,7 +35,11 @@ func get_random_note() -> String:
 func get_random_sustain() -> float:
 	return [0.25, 0.5, 0.75, 1.0].pick_random()
 
-func fill_buffer(pulse_hz: float) -> void:
+func play_note(note: String) -> void:
+	var pulse_hz = notes[note]
+	if not pulse_hz:
+		return
+
 	var increment = pulse_hz / sample_hz
 	var frames_available = playback.get_frames_available()
 	
