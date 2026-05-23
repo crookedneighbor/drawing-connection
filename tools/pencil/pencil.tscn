@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://iihl1e0keb0"]
+
+[ext_resource type="Script" uid="uid://5obdsy4f3rgj" path="res://tools/pencil/pencil.gd" id="1_chukg"]
+
+[node name="Pencil" type="Node2D" unique_id=617229547]
+script = ExtResource("1_chukg")
+
+[node name="Paper" type="Node2D" parent="." unique_id=1227008733]
