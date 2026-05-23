@@ -4,11 +4,11 @@ var playback: AudioStreamGeneratorPlayback
 var phase: float = 0.0
 
 var notes: Dictionary[String, float] = {
-	"C": 261.62,
-	"D": 293.66,
-	"E": 329.63,
-	"G": 392.0,
 	"A": 440.0,
+	"G": 392.0,
+	"E": 329.63,
+	"D": 293.66,
+	"C": 261.62,
 }
 
 @onready var sample_hz: float = stream.mix_rate

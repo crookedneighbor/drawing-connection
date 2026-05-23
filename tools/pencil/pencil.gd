@@ -1,5 +1,8 @@
 class_name Pencil extends Node2D
 
+signal pressed
+signal released
+
 @onready var paper: Node2D = $Paper
 
 var drawing_in_progress: bool = false
@@ -15,6 +18,11 @@ func _ready():
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.pressed:
+				pressed.emit()
+			else:
+				released.emit()
+
 			drawing_in_progress = event.pressed and not drawing_started
 			
 			if drawing_in_progress:

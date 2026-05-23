@@ -1,22 +1,28 @@
 class_name Main extends Node2D
 
-@onready var button: Button = $Button
 @onready var melody_player: MelodyPlayer = $MelodyPlayer
+@onready var pad: Pad = $Pad
+@onready var pencil: Pencil = $Pencil
 
 var pressing: bool = false
+var current_note: String = ""
 
 func _ready() -> void:
-	button.button_down.connect(_on_button_pressed)
-	button.button_up.connect(_on_button_released)
+	pad.section_change.connect(_on_section_change)
+	pencil.pressed.connect(_on_pressed)
+	pencil.released.connect(_on_released)
 
 func _process(_delta: float) -> void:
 	if pressing:
-		melody_player.play_note("C")
+		melody_player.play_note(current_note)
 
-func _on_button_pressed() -> void:
+func _on_section_change(index: int) -> void:
+	current_note = melody_player.notes.keys()[index]
+
+func _on_pressed() -> void:
 	melody_player.volume_db = 0
 	pressing = true
 
-func _on_button_released() -> void:
+func _on_released() -> void:
 	pressing = false
 	melody_player.volume_db = -80

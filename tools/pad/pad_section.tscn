@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bcmwnmjdpsbg5"]
+
+[ext_resource type="Script" uid="uid://cnyhillrqahaj" path="res://tools/pad/pad_section.gd" id="1_hbjlc"]
+
+[node name="PadSection" type="Area2D" unique_id=2025054065]
+script = ExtResource("1_hbjlc")
