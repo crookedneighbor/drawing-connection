@@ -17,6 +17,9 @@ func _ready() -> void:
 	play()
 	playback = get_stream_playback()
 
+func random_note() -> String:
+	return notes.keys().pick_random()
+
 func play_note(note: String) -> void:
 	var pulse_hz = notes[note]
 	if not pulse_hz:
