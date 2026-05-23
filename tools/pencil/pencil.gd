@@ -19,7 +19,7 @@ func _input(event: InputEvent) -> void:
 			if drawing_in_progress:
 				drawing_started = true
 				current_line = Line2D.new()
-				current_line.default_color = Color.BLUE
+				current_line.default_color = Color.DIM_GRAY
 				current_line.width = 4
 				paper.add_child(current_line)
 				current_line.add_point(event.position)
