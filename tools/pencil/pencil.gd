@@ -6,6 +6,11 @@ var drawing_in_progress: bool = false
 var current_line: Line2D = null
 var drawing_started: bool = false
 
+var pencil = load("res://tools/pencil/pencil.png")
+
+func _ready():
+	Input.set_custom_mouse_cursor(pencil)
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
