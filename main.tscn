@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://d32l4wnp5onnv" path="res://tools/pad/pad.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://vc4ejtiqnw26" path="res://main.gd" id="1_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://caxj538a64bmh" path="res://tools/melody-player/melody-player.tscn" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://iihl1e0keb0" path="res://tools/pencil/pencil.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://du01dv6xnq57c" path="res://tools/connector_dot/connector_dot_manager.tscn" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://c76lyf0pdksov" path="res://tools/connector_dot/connector_dot.tscn" id="5_lquwl"]
@@ -12,8 +11,6 @@
 [node name="Main" type="Node2D" unique_id=1251148645 node_paths=PackedStringArray("connector_dot_manager")]
 script = ExtResource("1_1bvp3")
 connector_dot_manager = NodePath("ConnectorDotManager")
-
-[node name="MelodyPlayer" parent="." unique_id=2018121744 instance=ExtResource("1_h2yge")]
 
 [node name="Pad" parent="." unique_id=1424504259 instance=ExtResource("1_0xm2m")]
 position = Vector2(234, 189)
