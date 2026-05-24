@@ -27,7 +27,6 @@ func _ready() -> void:
 func restart() -> void:
 	get_tree().reload_current_scene()
 
-
 func _on_released() -> void:
 	pressing = false
 
