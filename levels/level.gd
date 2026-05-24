@@ -1,10 +1,11 @@
-class_name Main extends Node2D
+class_name Level extends Node2D
+
+@export_file("*.tscn") var next_level
 
 @onready var pad: Pad = $Pad
 @onready var pencil: Pencil = $Pencil
 @onready var controls: Controls = $Controls
-
-@export var connector_dot_manager: ConnectorDotManager
+@onready var connector_dot_manager: ConnectorDotManager = $ConnectorDotManager
 
 var pressing: bool = false
 var within_bounds: bool = false
@@ -52,6 +53,8 @@ func _on_collide() -> void:
 func _on_win() -> void:
 	pencil.stop()
 	print("TODO - load win screen")
+	if next_level:
+		get_tree().change_scene_to_file(next_level)
 
 func _on_restart() -> void:
 	restart()

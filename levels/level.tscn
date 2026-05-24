@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b0olc2xuik3ss"]
+
+[ext_resource type="Script" uid="uid://vc4ejtiqnw26" path="res://levels/level.gd" id="1_n6hdu"]
+[ext_resource type="PackedScene" uid="uid://d32l4wnp5onnv" path="res://tools/pad/pad.tscn" id="2_km5ld"]
+[ext_resource type="PackedScene" uid="uid://iihl1e0keb0" path="res://tools/pencil/pencil.tscn" id="3_i2t4f"]
+[ext_resource type="PackedScene" uid="uid://du01dv6xnq57c" path="res://tools/connector_dot/connector_dot_manager.tscn" id="4_8cye3"]
+[ext_resource type="PackedScene" uid="uid://da4fkuoc207t1" path="res://tools/controls/controls.tscn" id="6_aicyk"]
+
+[node name="Level" type="Node2D" unique_id=1251148645]
+script = ExtResource("1_n6hdu")
+
+[node name="Pad" parent="." unique_id=1424504259 instance=ExtResource("2_km5ld")]
+position = Vector2(234, 189)
+number_of_horizontal_areas = 5
+
+[node name="Pencil" parent="." unique_id=617229547 instance=ExtResource("3_i2t4f")]
+
+[node name="ConnectorDotManager" parent="." unique_id=236887033 instance=ExtResource("4_8cye3")]
+
+[node name="Controls" parent="." unique_id=84583839 instance=ExtResource("6_aicyk")]
+position = Vector2(480, 40)
+
+[connection signal="enter_drawable_area" from="Pad" to="Pencil" method="enter_drawable_area"]
+[connection signal="exit_drawable_area" from="Pad" to="Pencil" method="exit_drawable_area"]
