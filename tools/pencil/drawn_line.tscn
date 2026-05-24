@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cuuwksewwtgfe"]
+
+[ext_resource type="Script" uid="uid://bld7x2iybkpup" path="res://tools/pencil/drawn_line.gd" id="1_03sky"]
+
+[node name="DrawnLine" type="Line2D" unique_id=1072555605]
+script = ExtResource("1_03sky")

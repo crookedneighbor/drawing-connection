@@ -22,7 +22,7 @@ func _input(event: InputEvent) -> void:
 
 	elif event is InputEventMouseMotion and drawing_in_progress:
 		if in_drawable_area:
-			current_line.add_point(event.position)
+			current_line.add_line(event.position)
 		elif not current_line.points.is_empty():
 			current_line = add_new_line()
 
@@ -31,15 +31,13 @@ func start() -> void:
 		return
 	drawing_in_progress = true
 	current_line = add_new_line()
-	current_line.add_point(get_global_mouse_position())
+	current_line.add_line(get_global_mouse_position())
 
 func stop() -> void:
 	drawing_in_progress = false
 
-func add_new_line() -> Line2D:
-	var line = Line2D.new()
-	line.default_color = Color.DIM_GRAY
-	line.width = 4
+func add_new_line() -> DrawnLine:
+	var line = DrawnLine.new()
 	paper.add_child(line)
 	return line
 

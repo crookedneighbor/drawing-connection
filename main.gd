@@ -22,9 +22,16 @@ func _ready() -> void:
 	connector_dot_manager.win.connect(_on_win)
 	controls.restart.connect(_on_restart)
 
+	for c in get_children():
+		if c is Obstacle:
+			c.collide.connect(_on_collide)
+
 func _process(_delta: float) -> void:
 	if is_drawing:
 		melody_player.play_note(current_note)
+
+func restart() -> void:
+	get_tree().reload_current_scene()
 
 func _on_section_change(index: int) -> void:
 	current_note = melody_player.notes.keys()[index]
@@ -47,10 +54,14 @@ func _on_start() -> void:
 	melody_player.volume_db = 0
 	pressing = true
 
+func _on_collide() -> void:
+	print('TODO - collide - Play Game Over Animation')
+	restart()
+
 func _on_win() -> void:
 	pencil.stop()
 	melody_player.volume_db = -80
 	print("TODO - load win screen")
 
 func _on_restart() -> void:
-	get_tree().reload_current_scene()
+	restart()

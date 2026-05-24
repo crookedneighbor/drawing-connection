@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://6b4o8lwdg03a"]
+
+[ext_resource type="Script" uid="uid://cmxmd5tu7dhe6" path="res://obstacles/obstacle.gd" id="1_0w5lc"]
+[ext_resource type="Texture2D" uid="uid://blhf4kiper5m" path="res://obstacles/cactus/cactus.png" id="2_0w5lc"]
+
+[node name="Cactus" type="Area2D" unique_id=1311550916]
+input_pickable = false
+script = ExtResource("1_0w5lc")
+metadata/_custom_type_script = "uid://cmxmd5tu7dhe6"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1800601024]
+position = Vector2(0, -104)
+texture = ExtResource("2_0w5lc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1558581584]
+polygon = PackedVector2Array(-55, -156, -56, -119, -52, -114, -19, -114, -16, -110, -17, -1, 16, 0, 16, -128, 18, -130, 38, -130, 40, -128, 52, -128, 57, -136, 56, -172, 51, -175, 43, -174, 40, -170, 40, -152, 40, -147, 35, -143, 19, -143, 16, -145, 16, -169, 16, -180, 15, -186, 5, -191, -2, -191, -2, -196, -5, -201, -8, -198, -11, -198, -13, -200, -14, -201, -17, -197, -17, -192, -14, -190, -12, -189, -16, -183, -16, -152, -15, -150, -15, -147, -16, -146, -16, -138, -17, -136, -16, -133, -16, -128, -24, -128, -25, -127, -36, -127, -38, -129, -40, -130, -40, -132, -40, -155, -43, -156, -46, -157, -48, -158, -52, -158)

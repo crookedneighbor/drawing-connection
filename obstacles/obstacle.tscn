@@ -1,3 +1,7 @@
 [gd_scene format=3 uid="uid://cq4puvof7up6q"]
 
-[node name="Obstacle" type="RigidBody2D" unique_id=1977503019]
+[ext_resource type="Script" uid="uid://cmxmd5tu7dhe6" path="res://obstacles/obstacle.gd" id="1_5rvb3"]
+
+[node name="Obstacle" type="Area2D" unique_id=944799323]
+collision_layer = 2
+script = ExtResource("1_5rvb3")
