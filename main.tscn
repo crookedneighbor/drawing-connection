@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://vc4ejtiqnw26" path="res://main.gd" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://caxj538a64bmh" path="res://tools/melody-player/melody-player.tscn" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://iihl1e0keb0" path="res://tools/pencil/pencil.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://du01dv6xnq57c" path="res://tools/connector_dot/connector_dot_manager.tscn" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://c76lyf0pdksov" path="res://tools/connector_dot/connector_dot.tscn" id="5_lquwl"]
 
 [node name="Main" type="Node2D" unique_id=1251148645]
 script = ExtResource("1_1bvp3")
@@ -15,6 +17,14 @@ position = Vector2(234, 189)
 number_of_horizontal_areas = 5
 
 [node name="Pencil" parent="." unique_id=617229547 instance=ExtResource("2_h2yge")]
+
+[node name="ConnectorDotManager" parent="." unique_id=236887033 instance=ExtResource("5_7mycd")]
+
+[node name="ConnectorDot" parent="ConnectorDotManager" unique_id=769532394 instance=ExtResource("5_lquwl")]
+position = Vector2(133, 187)
+
+[node name="ConnectorDot2" parent="ConnectorDotManager" unique_id=1785843932 instance=ExtResource("5_lquwl")]
+position = Vector2(327, 187)
 
 [connection signal="enter_drawable_area" from="Pad" to="Pencil" method="enter_drawable_area"]
 [connection signal="exit_drawable_area" from="Pad" to="Pencil" method="exit_drawable_area"]

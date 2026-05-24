@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://du01dv6xnq57c"]
+
+[ext_resource type="Script" uid="uid://bttnvkgoqsq0x" path="res://tools/connector_dot/connector_dot_manager.gd" id="1_0dm5c"]
+
+[node name="ConnectorDotManager" type="Node2D" unique_id=236887033]
+script = ExtResource("1_0dm5c")
