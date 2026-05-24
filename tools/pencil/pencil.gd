@@ -33,6 +33,9 @@ func start() -> void:
 	current_line = add_new_line()
 	current_line.add_point(get_global_mouse_position())
 
+func stop() -> void:
+	drawing_in_progress = false
+
 func add_new_line() -> Line2D:
 	var line = Line2D.new()
 	line.default_color = Color.DIM_GRAY

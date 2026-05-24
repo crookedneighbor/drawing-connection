@@ -1,6 +1,7 @@
 class_name ConnectorDot extends Area2D
 
 signal started
+signal found
 
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
@@ -35,6 +36,7 @@ func connected() -> void:
 	mouse_entered.disconnect(_on_mouse_enter)
 	mouse_exited.disconnect(_on_mouse_exit)
 	state = "connected"
+	found.emit()
 	anim.play("connected")
 
 func waiting() -> void:

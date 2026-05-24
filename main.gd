@@ -19,6 +19,7 @@ func _ready() -> void:
 	pad.exit_drawable_area.connect(_on_exit_drawable_area)
 	pencil.released.connect(_on_released)
 	connector_dot_manager.started.connect(_on_start)
+	connector_dot_manager.win.connect(_on_win)
 	controls.restart.connect(_on_restart)
 
 func _process(_delta: float) -> void:
@@ -45,6 +46,11 @@ func _on_start() -> void:
 	pencil.start()
 	melody_player.volume_db = 0
 	pressing = true
+
+func _on_win() -> void:
+	pencil.stop()
+	melody_player.volume_db = -80
+	print("TODO - load win screen")
 
 func _on_restart() -> void:
 	get_tree().reload_current_scene()
