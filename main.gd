@@ -34,6 +34,11 @@ func _on_enter_drawable_area() -> void:
 	within_bounds = true
 
 func _on_exit_drawable_area() -> void:
+	if is_drawing:
+		print("TODO - left the sketchbook, game over")
+		restart()
+		return
+
 	within_bounds = false
 
 func _on_start() -> void:
