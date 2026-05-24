@@ -20,11 +20,6 @@ func _input(event: InputEvent) -> void:
 				drawing_in_progress = false
 				released.emit()
 
-		# TODO - may not want to let the right button clear, but it's an easy way
-		# to trigger the functionality right now
-		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-			clear()
-
 	elif event is InputEventMouseMotion and drawing_in_progress:
 		if in_drawable_area:
 			current_line.add_point(event.position)

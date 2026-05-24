@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://da4fkuoc207t1"]
+
+[ext_resource type="Script" uid="uid://0d887a5nkwio" path="res://tools/controls/controls.gd" id="1_82x20"]
+
+[node name="Controls" type="CanvasGroup" unique_id=84583839]
+script = ExtResource("1_82x20")
+
+[node name="Restart" type="Button" parent="." unique_id=1379512982]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Restart"

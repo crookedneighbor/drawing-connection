@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://iihl1e0keb0" path="res://tools/pencil/pencil.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://du01dv6xnq57c" path="res://tools/connector_dot/connector_dot_manager.tscn" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://c76lyf0pdksov" path="res://tools/connector_dot/connector_dot.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://da4fkuoc207t1" path="res://tools/controls/controls.tscn" id="7_272bh"]
 
 [node name="Main" type="Node2D" unique_id=1251148645 node_paths=PackedStringArray("connector_dot_manager")]
 script = ExtResource("1_1bvp3")
@@ -26,6 +27,9 @@ position = Vector2(133, 187)
 
 [node name="ConnectorDot2" parent="ConnectorDotManager" unique_id=1785843932 instance=ExtResource("5_lquwl")]
 position = Vector2(327, 187)
+
+[node name="Controls" parent="." unique_id=84583839 instance=ExtResource("7_272bh")]
+position = Vector2(480, 40)
 
 [connection signal="enter_drawable_area" from="Pad" to="Pencil" method="enter_drawable_area"]
 [connection signal="exit_drawable_area" from="Pad" to="Pencil" method="exit_drawable_area"]
