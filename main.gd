@@ -3,6 +3,7 @@ class_name Main extends Node2D
 @onready var melody_player: MelodyPlayer = $MelodyPlayer
 @onready var pad: Pad = $Pad
 @onready var pencil: Pencil = $Pencil
+@export var connector_dot_manager: ConnectorDotManager
 
 var pressing: bool = false
 var within_bounds: bool = false
@@ -14,8 +15,8 @@ func _ready() -> void:
 	pad.section_change.connect(_on_section_change)
 	pad.enter_drawable_area.connect(_on_enter_drawable_area)
 	pad.exit_drawable_area.connect(_on_exit_drawable_area)
-	pencil.pressed.connect(_on_pressed)
 	pencil.released.connect(_on_released)
+	connector_dot_manager.started.connect(_on_start)
 
 func _process(_delta: float) -> void:
 	if is_drawing:
@@ -23,10 +24,6 @@ func _process(_delta: float) -> void:
 
 func _on_section_change(index: int) -> void:
 	current_note = melody_player.notes.keys()[index]
-
-func _on_pressed() -> void:
-	melody_player.volume_db = 0
-	pressing = true
 
 func _on_released() -> void:
 	pressing = false
@@ -40,3 +37,8 @@ func _on_enter_drawable_area() -> void:
 func _on_exit_drawable_area() -> void:
 	melody_player.volume_db = -80
 	within_bounds = false
+
+func _on_start() -> void:
+	pencil.start()
+	melody_player.volume_db = 0
+	pressing = true

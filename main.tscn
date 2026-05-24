@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://du01dv6xnq57c" path="res://tools/connector_dot/connector_dot_manager.tscn" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://c76lyf0pdksov" path="res://tools/connector_dot/connector_dot.tscn" id="5_lquwl"]
 
-[node name="Main" type="Node2D" unique_id=1251148645]
+[node name="Main" type="Node2D" unique_id=1251148645 node_paths=PackedStringArray("connector_dot_manager")]
 script = ExtResource("1_1bvp3")
+connector_dot_manager = NodePath("ConnectorDotManager")
 
 [node name="MelodyPlayer" parent="." unique_id=2018121744 instance=ExtResource("1_h2yge")]
 

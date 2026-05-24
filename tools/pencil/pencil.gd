@@ -1,13 +1,11 @@
 class_name Pencil extends Node2D
 
-signal pressed
 signal released
 
 @onready var paper: Node2D = $Paper
 
-var drawing_in_progress: bool = false
 var current_line: Line2D = null
-var drawing_started: bool = false
+var drawing_in_progress: bool = false
 var in_drawable_area: bool = false
 
 var pencil = load("res://tools/pencil/pencil.png")
@@ -18,18 +16,10 @@ func _ready():
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed:
-				pressed.emit()
-			else:
+			if not event.pressed:
+				drawing_in_progress = false
 				released.emit()
 
-			drawing_in_progress = event.pressed and not drawing_started
-			
-			if drawing_in_progress:
-				drawing_started = true
-				current_line = add_new_line()
-				if in_drawable_area:
-					current_line.add_point(event.position)
 		# TODO - may not want to let the right button clear, but it's an easy way
 		# to trigger the functionality right now
 		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
@@ -41,6 +31,13 @@ func _input(event: InputEvent) -> void:
 		elif not current_line.points.is_empty():
 			current_line = add_new_line()
 
+func start() -> void:
+	if drawing_in_progress:
+		return
+	drawing_in_progress = true
+	current_line = add_new_line()
+	current_line.add_point(get_global_mouse_position())
+
 func add_new_line() -> Line2D:
 	var line = Line2D.new()
 	line.default_color = Color.DIM_GRAY
@@ -49,7 +46,6 @@ func add_new_line() -> Line2D:
 	return line
 
 func clear() -> void:
-	drawing_started = false
 	drawing_in_progress = false
 	for c in paper.get_children():
 		c.queue_free()

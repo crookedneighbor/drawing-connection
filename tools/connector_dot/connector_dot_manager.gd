@@ -1,5 +1,7 @@
 class_name ConnectorDotManager extends Node2D
 
+signal started
+
 var dots: Array[ConnectorDot] = []
 
 func _ready() -> void:
@@ -13,3 +15,5 @@ func _on_start() -> void:
 		dot.started.disconnect(_on_start)
 		if dot.state == "ready":
 			dot.waiting()
+
+	started.emit()
