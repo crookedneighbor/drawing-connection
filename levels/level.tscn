@@ -10,7 +10,7 @@
 script = ExtResource("1_n6hdu")
 
 [node name="Pad" parent="." unique_id=1424504259 instance=ExtResource("2_km5ld")]
-position = Vector2(234, 189)
+position = Vector2(232, 192)
 number_of_horizontal_areas = 5
 
 [node name="Pencil" parent="." unique_id=617229547 instance=ExtResource("3_i2t4f")]

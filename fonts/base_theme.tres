@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://cf6fwwkqh1ya6"]
+
+[ext_resource type="FontFile" uid="uid://ciof42bgypqbx" path="res://fonts/TerribleCursive.otf" id="1_00nfc"]
+
+[resource]
+default_font = ExtResource("1_00nfc")
+/font_sizes/Font_Size = 32

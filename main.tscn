@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bmwq6pkc4wyo4"]
+
+[ext_resource type="Script" uid="uid://bvivmgax7lm3r" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://d32l4wnp5onnv" path="res://tools/pad/pad.tscn" id="1_ig7tw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+content_margin_left = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 8.0
+bg_color = Color(0.20871013, 0.20871016, 0.20871004, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Main" type="Node2D" unique_id=371138527]
+script = ExtResource("1_0xm2m")
+
+[node name="Pad" parent="." unique_id=1424504259 instance=ExtResource("1_ig7tw")]
+position = Vector2(232, 192)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1741972207]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 101.0
+offset_top = 113.0
+offset_right = 370.0
+offset_bottom = 214.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "doodle dot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1273020469]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 152.0
+offset_top = 216.0
+offset_right = 319.0
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xm2m")
+text = "start"

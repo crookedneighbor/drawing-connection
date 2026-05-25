@@ -20,6 +20,3 @@ position = Vector2(240, 340)
 [node name="SpeechBubble" parent="." index="5" unique_id=490983717 instance=ExtResource("4_703o1")]
 position = Vector2(320, 208)
 text = "Careful!"
-
-[connection signal="enter_drawable_area" from="Pad" to="Pencil" method="enter_drawable_area"]
-[connection signal="exit_drawable_area" from="Pad" to="Pencil" method="exit_drawable_area"]
