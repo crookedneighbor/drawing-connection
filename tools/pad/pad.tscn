@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bxj7p272qes4a" path="res://tools/pad/pad.png" id="1_xfyqx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfyqx"]
-size = Vector2(445, 273)
+size = Vector2(450, 273)
 
 [node name="Pad" type="Node2D" unique_id=1424504259]
 script = ExtResource("1_82yi4")
@@ -15,7 +15,7 @@ texture = ExtResource("1_xfyqx")
 [node name="Area2D" type="Area2D" parent="." unique_id=573705593]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=149514454]
-position = Vector2(8.5, 14.5)
+position = Vector2(8, 14.5)
 shape = SubResource("RectangleShape2D_xfyqx")
 debug_color = Color(0.83283395, 0.019880503, 0.9311207, 0.2784314)
 
