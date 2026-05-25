@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d25c1gxdkqdyb"]
+
+[ext_resource type="PackedScene" uid="uid://b2roqbxkxa6x6" path="res://obstacles/monster_teeth/monster_teeth_bottom.tscn" id="1_slwqh"]
+[ext_resource type="Script" uid="uid://cp4l27p20gsq" path="res://obstacles/monster_teeth/monster.gd" id="1_u5l70"]
+[ext_resource type="PackedScene" uid="uid://mbnd4y1hv78v" path="res://obstacles/monster_teeth/monster_teeth_top.tscn" id="2_u5l70"]
+
+[node name="Monster" type="Node2D" unique_id=724607335]
+script = ExtResource("1_u5l70")
+
+[node name="MonsterTeethBottom" parent="." unique_id=1634709657 instance=ExtResource("1_slwqh")]
+
+[node name="MonsterTeethTop" parent="." unique_id=76377284 instance=ExtResource("2_u5l70")]

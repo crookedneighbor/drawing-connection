@@ -2,8 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b0olc2xuik3ss" path="res://levels/level.tscn" id="1_i4iq6"]
 [ext_resource type="PackedScene" uid="uid://c76lyf0pdksov" path="res://tools/connector_dot/connector_dot.tscn" id="2_cvmri"]
-[ext_resource type="PackedScene" uid="uid://mbnd4y1hv78v" path="res://obstacles/monster_teeth/monster_teeth_top.tscn" id="3_56mag"]
-[ext_resource type="PackedScene" uid="uid://b2roqbxkxa6x6" path="res://obstacles/monster_teeth/monster_teeth_bottom.tscn" id="4_cvmri"]
+[ext_resource type="PackedScene" uid="uid://d25c1gxdkqdyb" path="res://obstacles/monster_teeth/monster.tscn" id="3_i4iq6"]
 
 [node name="Level" unique_id=1251148645 instance=ExtResource("1_i4iq6")]
 next_level = "uid://uefg0j1hy2s2"
@@ -17,10 +16,9 @@ position = Vector2(392, 256)
 [node name="ConnectorDot" parent="ConnectorDotManager" index="1" unique_id=638825767 instance=ExtResource("2_cvmri")]
 position = Vector2(16, 264)
 
-[node name="MonsterTeethTop" parent="." index="4" unique_id=1634709657 instance=ExtResource("3_56mag")]
-position = Vector2(246, 341)
+[node name="Monster" parent="." index="4" unique_id=724607335 instance=ExtResource("3_i4iq6")]
+position = Vector2(241, 340)
 
-[node name="MonsterTeethBottom" parent="." index="5" unique_id=260882017 instance=ExtResource("4_cvmri")]
-position = Vector2(248, 340)
-
-[connection signal="started" from="ConnectorDotManager" to="MonsterTeethTop" method="start"]
+[connection signal="enter_drawable_area" from="Pad" to="Pencil" method="enter_drawable_area"]
+[connection signal="exit_drawable_area" from="Pad" to="Pencil" method="exit_drawable_area"]
+[connection signal="started" from="ConnectorDotManager" to="Monster" method="start"]
