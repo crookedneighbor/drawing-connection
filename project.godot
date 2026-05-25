@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Drawing Connection"
-run/main_scene="uid://b0olc2xuik3ss"
+run/main_scene="uid://1fbmvimblsqx"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
