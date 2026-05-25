@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b2roqbxkxa6x6"]
+
+[ext_resource type="Script" uid="uid://cmxmd5tu7dhe6" path="res://obstacles/obstacle.gd" id="1_8gcba"]
+[ext_resource type="Texture2D" uid="uid://dbglxavkearbv" path="res://obstacles/monster_teeth/monster_teeth_bottom.png" id="2_8gcba"]
+
+[node name="MonsterTeethBottom" type="Area2D" unique_id=1634709657]
+script = ExtResource("1_8gcba")
+metadata/_custom_type_script = "uid://cmxmd5tu7dhe6"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1472330984]
+position = Vector2(-1, -84)
+texture = ExtResource("2_8gcba")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=946054091]
+polygon = PackedVector2Array(-168, 0, -168, -16, -163, -30, -162, -37, -162, -48, -158, -52, -147, -52, -133, -52, -129, -51, -114, -51, -90, -165, -79, -50, -60, -50, -52, -48, -42, -48, -32, -46, -22, -46, -7, -160, 18, -46, 55, -46, 73, -165, 102, -53, 112, -55, 125, -57, 132, -59, 147, -58, 152, -57, 160, -46, 162, -36, 165, -20, 165, -12, 159, 0)
