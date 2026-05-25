@@ -55,6 +55,6 @@ func _on_collide() -> void:
 
 func _on_win() -> void:
 	pencil.stop()
-	print("TODO - load win screen")
+
 	if next_level:
-		get_tree().change_scene_to_file(next_level)
+		SceneTransitionNode.change_scene(next_level)
