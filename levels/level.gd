@@ -19,7 +19,6 @@ func _ready() -> void:
 	pencil.released.connect(_on_released)
 	connector_dot_manager.started.connect(_on_start)
 	connector_dot_manager.win.connect(_on_win)
-	controls.restart.connect(_on_restart)
 
 	_connect_obstacles(get_children())
 
@@ -59,6 +58,3 @@ func _on_win() -> void:
 	print("TODO - load win screen")
 	if next_level:
 		get_tree().change_scene_to_file(next_level)
-
-func _on_restart() -> void:
-	restart()
