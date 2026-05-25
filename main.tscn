@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bvivmgax7lm3r" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://d32l4wnp5onnv" path="res://tools/pad/pad.tscn" id="1_ig7tw"]
+[ext_resource type="FontFile" uid="uid://ciof42bgypqbx" path="res://fonts/TerribleCursive.otf" id="3_h2yge"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
 content_margin_left = 24.0
@@ -32,6 +33,7 @@ offset_bottom = 214.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_h2yge")
 theme_override_font_sizes/normal_font_size = 64
 text = "doodle dot"
 horizontal_alignment = 1

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://mlda0yfoprfr" path="res://obstacles/speech_bubble/speech_bubble.tscn" id="4_703o1"]
 
 [node name="IntroDesert" unique_id=1251148645 instance=ExtResource("1_5sled")]
-next_level = "uid://41mb1y750cq2"
+next_level = "uid://c5ou62u2a6m7g"
 
 [node name="ConnectorDot2" parent="ConnectorDotManager" parent_id_path=PackedInt32Array(236887033) index="0" unique_id=769532394 instance=ExtResource("2_w26ed")]
 position = Vector2(344, 240)

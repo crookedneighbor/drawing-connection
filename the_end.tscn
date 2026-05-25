@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://c5ou62u2a6m7g"]
+
+[ext_resource type="Script" uid="uid://qpdg7va54f2p" path="res://the_end.gd" id="1_keutu"]
+[ext_resource type="PackedScene" uid="uid://d32l4wnp5onnv" path="res://tools/pad/pad.tscn" id="2_6rnfd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+content_margin_left = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 8.0
+bg_color = Color(0.20871013, 0.20871016, 0.20871004, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="The End" type="Node2D" unique_id=371138527]
+script = ExtResource("1_keutu")
+
+[node name="Pad" parent="." unique_id=1424504259 instance=ExtResource("2_6rnfd")]
+position = Vector2(232, 192)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1741972207]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 101.0
+offset_top = 65.0
+offset_right = 370.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "the end"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1273020469]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 152.0
+offset_top = 286.0
+offset_right = 319.0
+offset_bottom = 331.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xm2m")
+text = "play again"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=932165594]
+offset_left = 63.0
+offset_top = 123.0
+offset_right = 430.0
+offset_bottom = 274.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 15
+text = "art, programming:      blade barringer
+art assistance:    h barringer
+wigwag assistance: a barringer
+
+Terrible Cursive font by ggbotnet
+Tremolo Mono font by Rurr"
+horizontal_alignment = 1
+vertical_alignment = 1
