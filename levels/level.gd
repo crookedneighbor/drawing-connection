@@ -21,12 +21,16 @@ func _ready() -> void:
 	connector_dot_manager.win.connect(_on_win)
 	controls.restart.connect(_on_restart)
 
-	for c in get_children():
-		if c is Obstacle:
-			c.collide.connect(_on_collide)
+	_connect_obstacles(get_children())
 
 func restart() -> void:
 	get_tree().reload_current_scene()
+
+func _connect_obstacles(children: Array[Node]) -> void:
+	for c in children:
+		if c is Obstacle:
+			c.collide.connect(_on_collide)
+		_connect_obstacles(c.get_children())
 
 func _on_released() -> void:
 	pressing = false
