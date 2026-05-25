@@ -52,7 +52,7 @@ texture = ExtResource("2_l6gq0")
 hframes = 3
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=952327188]
-polygon = PackedVector2Array(-35, 0, -34, -182, -32, -184, -27, -184, -26, -182, -25, -179, 15, -199, 18, -198, 19, -194, 31, -186, 33, -178, 24, -168, 13, -167, 8, -171, 7, -177, 9, -180, 9, -187, -25, -154, -25, 0)
+polygon = PackedVector2Array(-35, 0, -34, -182, -36, -188, -35, -192, -30, -196, -24, -193, -24, -188, -26, -186, -25, -179, 15, -199, 18, -198, 19, -194, 31, -186, 33, -178, 24, -168, 13, -167, 8, -171, 7, -177, 9, -180, 9, -187, -25, -154, -25, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=112348141]
 libraries/ = SubResource("AnimationLibrary_3yvth")
