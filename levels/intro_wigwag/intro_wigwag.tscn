@@ -13,5 +13,11 @@ position = Vector2(112, 296)
 [node name="ConnectorDot" parent="ConnectorDotManager" parent_id_path=PackedInt32Array(236887033) index="1" unique_id=1098369469 instance=ExtResource("2_egq6e")]
 position = Vector2(384, 296)
 
+[node name="ConnectorDot3" parent="ConnectorDotManager" parent_id_path=PackedInt32Array(236887033) index="2" unique_id=1989905885 instance=ExtResource("2_egq6e")]
+position = Vector2(216, 120)
+
 [node name="Wigwag" parent="." index="4" unique_id=1245013287 instance=ExtResource("2_cewn3")]
 position = Vector2(248, 341)
+
+[connection signal="enter_drawable_area" from="Pad" to="Pencil" method="enter_drawable_area"]
+[connection signal="exit_drawable_area" from="Pad" to="Pencil" method="exit_drawable_area"]
