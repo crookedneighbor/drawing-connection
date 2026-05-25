@@ -3,15 +3,23 @@
 [ext_resource type="PackedScene" uid="uid://b0olc2xuik3ss" path="res://levels/level.tscn" id="1_5sled"]
 [ext_resource type="PackedScene" uid="uid://c76lyf0pdksov" path="res://tools/connector_dot/connector_dot.tscn" id="2_w26ed"]
 [ext_resource type="PackedScene" uid="uid://6b4o8lwdg03a" path="res://obstacles/cactus/cactus.tscn" id="3_703o1"]
+[ext_resource type="PackedScene" uid="uid://mlda0yfoprfr" path="res://obstacles/speech_bubble/speech_bubble.tscn" id="4_703o1"]
 
 [node name="IntroDesert" unique_id=1251148645 instance=ExtResource("1_5sled")]
 next_level = "uid://41mb1y750cq2"
 
 [node name="ConnectorDot2" parent="ConnectorDotManager" parent_id_path=PackedInt32Array(236887033) index="0" unique_id=769532394 instance=ExtResource("2_w26ed")]
-position = Vector2(336, 192)
+position = Vector2(344, 240)
 
 [node name="ConnectorDot" parent="ConnectorDotManager" parent_id_path=PackedInt32Array(236887033) index="1" unique_id=331079795 instance=ExtResource("2_w26ed")]
 position = Vector2(128, 192)
 
 [node name="Cactus" parent="." index="4" unique_id=1311550916 instance=ExtResource("3_703o1")]
 position = Vector2(240, 340)
+
+[node name="SpeechBubble" parent="." index="5" unique_id=490983717 instance=ExtResource("4_703o1")]
+position = Vector2(320, 208)
+text = "Hello"
+
+[connection signal="enter_drawable_area" from="Pad" to="Pencil" method="enter_drawable_area"]
+[connection signal="exit_drawable_area" from="Pad" to="Pencil" method="exit_drawable_area"]

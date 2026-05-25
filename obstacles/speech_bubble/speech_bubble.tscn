@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://mlda0yfoprfr"]
+
+[ext_resource type="Script" uid="uid://cm38ot8o8xsyq" path="res://obstacles/speech_bubble/speech_bubble.gd" id="1_nou2u"]
+[ext_resource type="Texture2D" uid="uid://b870p63t6xtfl" path="res://obstacles/speech_bubble/speech_bubble.png" id="2_nou2u"]
+
+[node name="SpeechBubble" type="Area2D" unique_id=490983717]
+script = ExtResource("1_nou2u")
+metadata/_custom_type_script = "uid://cmxmd5tu7dhe6"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1701663434]
+position = Vector2(0, -48)
+texture = ExtResource("2_nou2u")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=655799139]
+polygon = PackedVector2Array(-65, -31, -58, -25, -50, -19, -42, -18, -32, -16, -27, -13, -13, -6, -4, -3, 12, -2, 29, -2, 42, -7, 58, -23, 63, -32, 65, -47, 65, -62, 61, -74, 50, -84, 31, -92, 12, -94, -1, -92, -12, -89, -27, -79, -34, -68, -35, -63, -36, -52, -36, -39, -42, -36, -55, -34)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1719933177]
+offset_left = -24.0
+offset_top = -73.0
+offset_right = 51.0
+offset_bottom = -21.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
