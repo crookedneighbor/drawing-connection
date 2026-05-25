@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://d1xhhhkki7m8q"]
+
+[ext_resource type="Script" uid="uid://cmxmd5tu7dhe6" path="res://obstacles/obstacle.gd" id="1_n6eqr"]
+[ext_resource type="Texture2D" uid="uid://ckq6ym6avf8m8" path="res://obstacles/wigwag/wigwag.png" id="2_l6gq0"]
+
+[sub_resource type="Animation" id="Animation_01loq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_mjvsx"]
+resource_name = "wagging"
+length = 0.3
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3yvth"]
+_data = {
+&"RESET": SubResource("Animation_01loq"),
+&"wagging": SubResource("Animation_mjvsx")
+}
+
+[node name="Wigwag" type="Area2D" unique_id=1245013287]
+script = ExtResource("1_n6eqr")
+metadata/_custom_type_script = "uid://cmxmd5tu7dhe6"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=610866774]
+position = Vector2(0, -104)
+texture = ExtResource("2_l6gq0")
+hframes = 3
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=952327188]
+polygon = PackedVector2Array(-35, 0, -34, -182, -32, -184, -27, -184, -26, -182, -25, -179, 15, -199, 18, -198, 19, -194, 31, -186, 33, -178, 24, -168, 13, -167, 8, -171, 7, -177, 9, -180, 9, -187, -25, -154, -25, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=112348141]
+libraries/ = SubResource("AnimationLibrary_3yvth")
+autoplay = &"wagging"
