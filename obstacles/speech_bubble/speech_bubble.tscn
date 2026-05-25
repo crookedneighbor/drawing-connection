@@ -3,22 +3,92 @@
 [ext_resource type="Script" uid="uid://cm38ot8o8xsyq" path="res://obstacles/speech_bubble/speech_bubble.gd" id="1_nou2u"]
 [ext_resource type="Texture2D" uid="uid://b870p63t6xtfl" path="res://obstacles/speech_bubble/speech_bubble.png" id="2_nou2u"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nou2u"]
+radius = 7999996.0
+height = 15999992.0
+
+[sub_resource type="Animation" id="Animation_duu1j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_tyml7"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_1aymd"]
+resource_name = "reveal"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1.25, 1.25), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_daoh8"]
+_data = {
+&"RESET": SubResource("Animation_duu1j"),
+&"default": SubResource("Animation_tyml7"),
+&"reveal": SubResource("Animation_1aymd")
+}
+
 [node name="SpeechBubble" type="Area2D" unique_id=490983717]
 script = ExtResource("1_nou2u")
 metadata/_custom_type_script = "uid://cmxmd5tu7dhe6"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1701663434]
 position = Vector2(0, -48)
+scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("2_nou2u")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Sprite2D" unique_id=1719933177]
+offset_left = -24.0
+offset_top = -25.0
+offset_right = 51.0
+offset_bottom = 27.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Reveal Area" type="Area2D" parent="." unique_id=80637045]
+position = Vector2(0, -47.99952)
+scale = Vector2(1e-05, 1e-05)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Reveal Area" unique_id=626905321]
+position = Vector2(9, -44)
+shape = SubResource("CapsuleShape2D_nou2u")
+debug_color = Color(0.50936925, 0.5785736, 1.347661e-06, 0.41960785)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=655799139]
 polygon = PackedVector2Array(-65, -31, -58, -25, -50, -19, -42, -18, -32, -16, -27, -13, -13, -6, -4, -3, 12, -2, 29, -2, 42, -7, 58, -23, 63, -32, 65, -47, 65, -62, 61, -74, 50, -84, 31, -92, 12, -94, -1, -92, -12, -89, -27, -79, -34, -68, -35, -63, -36, -52, -36, -39, -42, -36, -55, -34)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1719933177]
-offset_left = -24.0
-offset_top = -73.0
-offset_right = 51.0
-offset_bottom = -21.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1319646734]
+libraries/ = SubResource("AnimationLibrary_daoh8")
+autoplay = &"default"
