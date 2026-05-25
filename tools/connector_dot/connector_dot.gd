@@ -4,6 +4,7 @@ signal started
 signal found
 
 @onready var anim: AnimationPlayer = $AnimationPlayer
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 # possible states: 
 # * ready
@@ -38,6 +39,7 @@ func connected() -> void:
 	state = "connected"
 	found.emit()
 	anim.play("connected")
+	audio.play()
 
 func waiting() -> void:
 	state = "waiting"
